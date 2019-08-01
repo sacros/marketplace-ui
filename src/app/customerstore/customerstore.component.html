@@ -1,0 +1,19 @@
+<h2>Products To Buy</h2>
+<div class="row" *ngFor="let productsObject of productsObjects">
+    <div class="card" (click)="buy(productsObject.id, productsObject.value)">
+        <h3>{{productsObject.name}}</h3>
+        <p>{{productsObject.quantity}}</p>
+        <p>{{productsObject.id}}</p>
+        <p>{{productsObject.storeId}}</p>
+        <p>{{productsObject.value}}</p>
+      </div>
+</div>
+
+<h2>Auction Product</h2>
+<div class="row" *ngFor="let auctionProductsObject of auctionProductsObjects">
+    <div class="card" (click)="products(storeObject.id)">
+        <h3>{{storeObject.id}}</h3>
+        <p>{{storeObject.name}}</p>
+        <p>{{storeObject.owner}}</p>
+      </div>
+</div>

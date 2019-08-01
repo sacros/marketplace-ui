@@ -1,0 +1,213 @@
+<div class="main-container">
+
+    <div class="sidenav col-md-9">
+
+        <div class="navs">
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addNewProduct">Add New
+                Product</button>
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#editProduct">Edit
+                Product</button>
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#removeProduct">Remove
+                Product</button>
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addAuctionProduct">Add
+                Auction Product</button>
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#cancelAuction">Cancel
+                Auction</button>
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#andAuction">And
+                Auction</button>
+
+        </div>
+
+    </div>
+    <div class="main ">
+        <div class="col-md-12">
+            <h2>Products List</h2>
+        </div>
+        <div class="col-md-12">
+            <table class="table table-striped">
+                <tbody>
+                <div class="col-md-12">
+                        <h2>Products</h2>
+                    </div>
+                    <tr *ngFor="let product of products">
+                        <td>{{product}}</td>
+                    </tr>
+                    <div class="col-md-12">
+                        <h2>Auction Products</h2>
+                    </div>
+                    <tr *ngFor="let auction of auctions">
+                        <td>{{auction}}</td>
+                    </tr>
+                </tbody>
+            </table>
+            <!-- The Add New Product Modal -->
+            <div class="modal fade" id="addNewProduct">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+
+                        <!-- Modal Header -->
+                        <div class="modal-header">
+                            <h4 class="modal-title">Add New Product</h4>
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        </div>
+
+                        <!-- Modal body -->
+                        <div class="modal-body">
+                            <span>Product Id: </span><input [(ngModel)] = "productId" class="form-control" type="text" />
+                            <span>Name: </span><input [(ngModel)] = "name" class="form-control" type="text" />
+                            <span>Quantity: </span><input [(ngModel)] = "quantity" class="form-control" type="text" />
+                            <span>Value: </span><input [(ngModel)] = "value" class="form-control" type="text" />
+                        </div>
+
+                        <!-- Modal footer -->
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+                            <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="addNewProduct()">Ok</button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- The Edit Product Modal -->
+            <div class="modal fade" id="editProduct">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+
+                        <!-- Modal Header -->
+                        <div class="modal-header">
+                            <h4 class="modal-title">Edit Product</h4>
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        </div>
+
+                        <!-- Modal body -->
+                        <div class="modal-body">
+                            <span>Name: </span><input class="form-control" type="text" />
+
+                        </div>
+
+                        <!-- Modal footer -->
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+                            <button type="button" class="btn btn-primary" data-dismiss="modal">Ok</button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- The Remove Product Modal -->
+            <div class="modal fade" id="removeProduct">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+
+                        <!-- Modal Header -->
+                        <div class="modal-header">
+                            <h4 class="modal-title">Remove Product</h4>
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        </div>
+
+
+                        <!-- Modal body -->
+                        <div class="modal-body">
+                            <span>Are you sure you want to <strong>Remove</strong> the product?</span><br />
+                           <input class="form-control" type="text" />
+                        </div>
+
+                        <!-- Modal footer -->
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+                            <button type="button" class="btn btn-primary" data-dismiss="modal">Ok</button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- Add Auction Product Modal -->
+            <div class="modal fade" id="addAuctionProduct">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+
+                        <!-- Modal Header -->
+                        <div class="modal-header">
+                            <h4 class="modal-title">Add Auction Product</h4>
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        </div>
+
+
+                        <!-- Modal body -->
+                        <div class="modal-body">
+                            <span>Name: </span><input class="form-control" type="text" />
+
+                        </div>
+
+                        <!-- Modal footer -->
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+                            <button type="button" class="btn btn-primary" data-dismiss="modal">Ok</button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- Cancel Auction Modal -->
+            <div class="modal fade" id="cancelAuction">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+
+                        <!-- Modal Header -->
+                        <div class="modal-header">
+                            <h4 class="modal-title">Cancel Auction</h4>
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        </div>
+
+
+                        <!-- Modal body -->
+                        <div class="modal-body">
+                            <span>Are you sure you want to <strong>Cancel</strong> the auction?</span><br />
+                            <input class="form-control" type="text" />
+                        </div>
+
+                        <!-- Modal footer -->
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+                            <button type="button" class="btn btn-primary" data-dismiss="modal">Ok</button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- And Auction Modal -->
+            <div class="modal fade" id="andAuction">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+
+                        <!-- Modal Header -->
+                        <div class="modal-header">
+                            <h4 class="modal-title">End Auction </h4>
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        </div>
+
+
+                        <!-- Modal body -->
+                        <div class="modal-body">
+                            <span>Name: </span><input class="form-control" type="text" />
+
+                        </div>
+
+                        <!-- Modal footer -->
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+                            <button type="button" class="btn btn-primary" data-dismiss="modal">Ok</button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>

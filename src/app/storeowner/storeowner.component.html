@@ -1,0 +1,137 @@
+
+<div class="main-container">
+
+    <div class="sidenav col-md-9">
+            <h2 style="color: white!important;text-align: center">Available Balance: <span><strong>{{availableBalance}}</strong> WEI</span></h2>
+
+    <div class="navs">
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addStore">Add Store</button>
+            <button type="button" class="btn btn-primary"  data-toggle="modal" data-target="#removeStore">Remove Store</button>
+            <button type="button" class="btn btn-primary"  data-toggle="modal" data-target="#editStore">Edit Store</button>
+            <button type="button" class="btn btn-primary"  data-toggle="modal" data-target="#withdrawAmount">Withdraw Amt</button>
+    </div>  
+    </div>
+      <div class="main " >
+          <div class="col-md-12">
+              <h2>Stores</h2>
+      </div>
+        <div class="col-md-12">
+                <table class="table table-striped">
+                  <tbody>
+                    <tr *ngFor="let store of stores">
+                      <td (click)="yo(store)">{{store}}</td>
+                    </tr>
+                  </tbody>
+                </table>
+        <!-- The Add New Store Modal -->
+    <div class="modal fade" id="addStore">
+        <div class="modal-dialog">
+            <div class="modal-content">
+          
+                <!-- Modal Header -->
+                <div class="modal-header">
+                  <h4 class="modal-title">Add Store</h4>
+                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+          
+                <!-- Modal body -->
+                <div class="modal-body">
+                  <span>Store Id: </span><input class="form-control" [(ngModel)]="newStoreId" type="text"/>
+                  <span>Store Name: </span><input class="form-control" [(ngModel)]="newStoreName" type="text"/>
+                </div>
+          
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+                      <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="addStore()">Ok</button>
+                </div>
+          
+            </div>
+        </div>
+    </div>
+    
+    <!-- The Remove Store Modal -->
+    <div class="modal fade" id="removeStore">
+            <div class="modal-dialog">
+                <div class="modal-content">
+              
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                      <h4 class="modal-title">Remove Store</h4>
+                      <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+              
+                    <!-- Modal body -->
+                    <div class="modal-body">
+                        <span>Are you sure you want to <strong>delete</strong> the store?</span><br/>
+                            <span>Bytes: </span><input class="form-control" type="text"/>
+                    </div>
+              
+                    <!-- Modal footer -->
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+                          <button type="button" class="btn btn-primary" data-dismiss="modal">Ok</button>
+                    </div>
+              
+                </div>
+            </div>
+        </div>
+
+         <!-- The Edit Store Modal -->
+    <div class="modal fade" id="editStore">
+            <div class="modal-dialog">
+                <div class="modal-content">
+              
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                      <h4 class="modal-title">Edit Store</h4>
+                      <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+              
+                    <!-- Modal body -->
+                    <div class="modal-body">
+                            <span>Name: </span><input class="form-control" type="text"/>
+                            <span>Age: </span><input class="form-control" type="text"/>
+                            <span>Date of Birth: </span><input class="form-control" type="date"/>
+                    </div>
+              
+                    <!-- Modal footer -->
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+                          <button type="button" class="btn btn-primary" data-dismiss="modal">Ok</button>
+                    </div>
+              
+                </div>
+            </div>
+        </div>
+
+             <!-- The WithDraw Amount Modal -->
+    <div class="modal fade" id="withdrawAmount">
+            <div class="modal-dialog">
+                <div class="modal-content">
+              
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                      <h4 class="modal-title">Withdraw Amount</h4>
+                      <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+              
+                    <!-- Modal body -->
+                    <div class="modal-body">
+                            <span>Amount: </span><input class="form-control" type="number"/>
+                    </div>
+              
+                    <!-- Modal footer -->
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+                          <button type="button" class="btn btn-primary" data-dismiss="modal">Ok</button>
+                    </div>
+              
+                </div>
+            </div>
+        </div>
+
+
+      </div>
+    </div>
+    

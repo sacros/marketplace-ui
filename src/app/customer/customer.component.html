@@ -1,0 +1,16 @@
+<div class="row" *ngFor="let storeObject of storesObjects">
+    <div class="card" (click)="products(storeObject.id)">
+        <h3>{{storeObject.id}}</h3>
+        <p>{{storeObject.name}}</p>
+        <p>{{storeObject.owner}}</p>
+      </div>
+</div>
+
+  <!-- <div class="column">
+    <div class="card">
+      <h3>{{storeObject}}</h3>
+      <p>Some text</p>
+      <p>Some text</p>
+    </div>
+  </div>
+</div> -->

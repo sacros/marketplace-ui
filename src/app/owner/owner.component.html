@@ -1,0 +1,114 @@
+
+<div class="main-container">
+
+    <div class="sidenav col-md-9">
+            <h2 style="color: white!important;text-align: center">Circuit Breaker: 
+              <div *ngIf="circuitBreaker; else elseBlock"><span style="color:red">ON</span></div>
+              <ng-template #elseBlock><span  style="color:green">OFF</span></ng-template>
+            </h2>
+    <div class="navs">
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addAdmin">Add Admin</button>
+            <button type="button" class="btn btn-primary"  data-toggle="modal" data-target="#removeAdmin">Remove Admin</button>
+            <button type="button" class="btn btn-primary" (click)="toggleCircuitBreak()"> Toggle Circuit Breaker</button>
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#selfDestruct">Self Destruct</button>
+    </div>  
+    </div>
+      <div class="main " >
+          <div class="col-md-12">
+              <h2>Admins</h2>
+    </div>
+        <div class="col-md-12">
+                <table class="table table-striped">
+                  <tbody>
+                    <tr *ngFor="let add of addresses">
+                      <td>{{add}}</td>
+                    </tr>
+                  </tbody>
+                </table>
+        <!-- The Add Admin Modal -->
+    <div class="modal fade" id="addAdmin">
+        <div class="modal-dialog">
+            <div class="modal-content">
+          
+                <!-- Modal Header -->
+                <div class="modal-header">
+                  <h4 class="modal-title">Add Admin</h4>
+                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+          
+                <!-- Modal body -->
+                <div class="modal-body">
+                 <span>Address: </span><input class="form-control" [(ngModel)]="newAdminAddress" type="text"/>
+                </div>
+          
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+                      <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="addAdmin()">Ok</button>
+                </div>
+          
+            </div>
+        </div>
+    </div>
+    
+    <!-- The Remove Admin Modal -->
+    <div class="modal fade" id="removeAdmin">
+            <div class="modal-dialog">
+                <div class="modal-content">
+              
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                      <h4 class="modal-title">Remove Admin</h4>
+                      <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+              
+                    <!-- Modal body -->
+                    <div class="modal-body">
+                     <span>Address: </span><input class="form-control" [(ngModel)]="removeAdminAddress"  type="text"/>
+                    </div>
+              
+                    <!-- Modal footer -->
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+                          <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="removeAdmin()">Ok</button>
+                    </div>
+              
+                </div>
+            </div>
+        </div>
+    
+    
+    <!-- The Self Destruct Modal -->
+    <div class="modal fade" id="selfDestruct">
+            <div class="modal-dialog">
+                <div class="modal-content">
+              
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                      <h4 class="modal-title">Self Destruct</h4>
+                      <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+              
+                    <!-- Modal body -->
+                    <div class="modal-body">
+                    <span>Are you sure you want to <strong>delete</strong> the contract?</span>
+                    </div>
+              
+                    <!-- Modal footer -->
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+                          <button type="button" class="btn btn-primary" data-dismiss="modal">Ok</button>
+                    </div>
+              
+                </div>
+            </div>
+        </div>
+        <!--- Footer -->
+    
+      </div>
+    
+        
+    
+    
+    </div>
+    
