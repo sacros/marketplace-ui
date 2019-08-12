@@ -11,7 +11,10 @@ export class CustomerComponent implements OnInit {
 
   constructor(private web3Service: Web3Service, private router: Router) { }
   stores: any;
-  storesObjects: [];
+  marketplace: any;
+  account: any;
+  web3: any;
+  storesObjects: any[];
   ngOnInit() {
     this.fillStoresObject();
   }

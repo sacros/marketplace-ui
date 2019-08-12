@@ -31,6 +31,7 @@ export class Web3Service {
         this.web3 = new Web3(window.web3.currentProvider);
       }
       else {
+        alert("Non-Ethereum browser detected. You should consider trying MetaMask!");
         console.log(
           "Non-Ethereum browser detected. You should consider trying MetaMask!"
         );

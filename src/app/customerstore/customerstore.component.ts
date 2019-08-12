@@ -11,6 +11,10 @@ import { ActivatedRoute } from "@angular/router";
 export class CustomerstoreComponent implements OnInit {
 
   constructor(private web3Service: Web3Service, private route: ActivatedRoute) { }
+  marketplace: any;
+  storeId: any;
+  account: any;
+  web3: any;
   products: any = [];
   productsObjects: any = [];
   auctionProductsObjects: any = [];
